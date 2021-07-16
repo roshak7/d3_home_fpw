@@ -1,0 +1,18 @@
+{% extends 'flatpages/default.html' %}
+{% load custom_filters %}
+{% block title %}
+news
+{% endblock title %}
+<!-- В контенте на странице мы выводим все товары -->
+{% block content %}
+<h1>Новости</h1>
+{% for post in news %}
+  {{ post.title }}<br>
+  {{ post.content }}
+{% endfor %}
+
+<h3>{{ time_now }}</h3>
+    <h3> {{ value1|default_if_none:"ничего" }} </h3>
+    <hr>
+
+{% endblock content %}
